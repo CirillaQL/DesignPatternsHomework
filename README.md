@@ -35,17 +35,18 @@
 次都改写f的代码。请你帮小王重新设计, 使得新设计能够满足小王的愿望。简要说明你的设计思想, 给出实现代码。
 
 ### 2
+         int main()
+         {
+           int numa,numb; char oper; double result;
+           cin>>numa>>numb;  cin>>oper;
+           switch(oper) {
+             case '+': result=numa+numb; break;
+             case '-': result=numa-numb; break;
+             case '*': result=numa*numb; break;
+             case '/': result=numa/(double)numb; break;
+           }
+           cout<<result<<endl;
+           return 0;
+         }
 小王正在编写一个简单的计算器程序，要求输入两个整数和运算符号(加、减、乘、除)，输出计算结果。小王用面向过程方法编写了下面的代码。请采用面向对象方法通过恰当的设计模式对小王的代码进行重构。
-int main()
-                              {
-                                int numa,numb; char oper; double result;
-                                cin>>numa>>numb;  cin>>oper;
-                                switch(oper) {
-                                  case '+': result=numa+numb; break;
-                                  case '-': result=numa-numb; break;
-                                  case '*': result=numa*numb; break;
-                                  case '/': result=numa/(double)numb; break;
-                                }
-                                cout<<result<<endl;
-                                return 0;
-                              }
+

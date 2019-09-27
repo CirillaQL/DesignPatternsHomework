@@ -13,22 +13,23 @@
 输出盒子中苹果的数量; 输出盒子中桔子的数量; 输出一天来盒子中水果减轻的总重量; 输出当前水果的总重量。
 
 ### 1-3
-class B {
-public: 
-   B(int n):data(n) { }
-   int Data( ) const { return data; }
-   void g1( );
-   void g2( );
-   void g3( );
-private:  
-   const int data;
-};
-void f( B& b ) {
-   int condition = b.Data( );           
-   if(condition == 1) { b.g1( ); }
-   else if(condition == 5) { b.g2( ); }
-   else if(condition == 9) { b.g3( ); }
-}
+         class B {
+         public: 
+            B(int n):data(n) { }
+            int Data( ) const { return data; }
+            void g1( );
+            void g2( );
+            void g3( );
+         private:  
+            const int data;
+         };
+         void f( B& b ) {
+            int condition = b.Data( );           
+            if(condition == 1) { b.g1( ); }
+            else if(condition == 5) { b.g2( ); }
+            else if(condition == 9) { b.g3( ); }
+         }
+
 当把此程序交给用户试用时, 针对函数f, 用户提出了一项新的要求: 当condition为100时, 依次执行b的成员函数g1( )和g2( )。经过进一步了解, 小王获悉: 以后
 可能还要增加处理condition的值是其它数值时的情况, 但这些需要分别处理的不同条件值的个数肯定不多。小王希望他写出的代码既能满足上述要求, 又不用每
 次都改写f的代码。请你帮小王重新设计, 使得新设计能够满足小王的愿望。简要说明你的设计思想, 给出实现代码。
@@ -36,15 +37,15 @@ void f( B& b ) {
 ### 2
 小王正在编写一个简单的计算器程序，要求输入两个整数和运算符号(加、减、乘、除)，输出计算结果。小王用面向过程方法编写了下面的代码。请采用面向对象方法通过恰当的设计模式对小王的代码进行重构。
 int main()
-{
-  int numa,numb; char oper; double result;
-  cin>>numa>>numb;  cin>>oper;
-  switch(oper) {
-    case '+': result=numa+numb; break;
-    case '-': result=numa-numb; break;
-    case '*': result=numa*numb; break;
-    case '/': result=numa/(double)numb; break;
-  }
-  cout<<result<<endl;
-  return 0;
-}
+                              {
+                                int numa,numb; char oper; double result;
+                                cin>>numa>>numb;  cin>>oper;
+                                switch(oper) {
+                                  case '+': result=numa+numb; break;
+                                  case '-': result=numa-numb; break;
+                                  case '*': result=numa*numb; break;
+                                  case '/': result=numa/(double)numb; break;
+                                }
+                                cout<<result<<endl;
+                                return 0;
+                              }

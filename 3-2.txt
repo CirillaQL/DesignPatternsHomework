@@ -1,0 +1,27 @@
+单例模式，也叫单子模式，是一种常用的软件设计模式。 
+在应用这个模式时，单例对象的类必须保证只有一个实例存在。 
+许多时候整个系统只需要拥有一个的全局对象，这样有利于我们协调系统整体的行为。
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+
+public class Singleton {
+    private static List<Singleton> list = new ArrayList<Singleton>();
+
+    private static final int MAX = 3;
+
+    static {
+        for (int i = 0;i<MAX;i++){
+            list.add(new Singleton());
+        }
+    }
+
+    public static Singleton getSingleton(){
+        Random random = new Random();
+        int current = random.nextInt(MAX);
+        return (Singleton)list.get(current);
+    }
+    
+}

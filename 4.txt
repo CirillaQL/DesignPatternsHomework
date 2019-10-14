@@ -1,0 +1,12 @@
+1.不合适，如果修改了DrawIt，那么就要修改所有使用到该模式的地方。
+2.不合适，如果修改了抽象类的方法名，那么也要去修改所有图形的实现方法以及已有的引用。
+3.适配器模式，通过创建一个适配器类Circle,将Draw方法转化为XCircle中的DrawIt方法。
+class Circle extend Shape{
+	private XCircle XC;
+	Circle(){
+		this.XC = new XCircle;
+	}
+	void Draw(){
+		xc.DrawIt();
+	}
+}
